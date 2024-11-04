@@ -17,7 +17,7 @@ export default Navbar*/
 
 
 import React from 'react';
-import { assets } from '../assets/assets.js';
+import { assets } from '../oldasse/oldassets.js';
 
 const Navbar = ({ setToken }) => {
   return (

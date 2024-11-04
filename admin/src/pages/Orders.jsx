@@ -5,6 +5,8 @@ import axios from 'axios'
 import {backendUrl}  from '../App'
 import {toast} from 'react-toastify'
 import { currency } from '../App'
+import { assets } from '../assets/assets'
+
 
 const Orders = ({token}) => {
   const [orders,setOrders] = useState([])
@@ -89,4 +91,7 @@ toast.error(response.data.message)
   )
   
 }
-export default Orders
+export default Orders 
+
+
+

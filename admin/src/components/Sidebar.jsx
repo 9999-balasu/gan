@@ -30,7 +30,7 @@ export default Sidebar*/
 
 import React from 'react'
 import { NavLink } from 'react-router-dom'
-import { assets } from '../assets/assets.js'
+import { assets } from '../oldasse/oldassets.js'
 
 const Sidebar = () => {
   return (

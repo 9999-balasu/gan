@@ -13,6 +13,7 @@ const Navbar = () => {
   localStorage.removeItem('token')
   setToken('')
     setCartItems({})
+   
   
 
  }

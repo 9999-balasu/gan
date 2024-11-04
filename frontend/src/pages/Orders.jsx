@@ -1,8 +1,9 @@
 
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 import { useContext } from 'react'
 import { ShopContext } from '../context/ShopContext'
 import Title from '../components/Title'
+import axios from 'axios';
 
 const Orders = () => {
   const{ backendUrl, token,currency} = useContext(ShopContext);
@@ -13,6 +14,8 @@ if (!token){
   return null
 }
 const response = await axios.post(backendUrl + '/api/order/userorders',{},{headers:{token}})
+
+console.log(response.data);
 if (response.data.success){
 let allOrdersItem = []
 response.data.orders.map((order)=>{
@@ -24,10 +27,11 @@ item['date'] = order.date
 allOrdersItem.push(item)
   })
 })
+//console.log(allOrdersItem);
 setOrderData(allOrdersItem.reverse());
 }
     }catch(error){
-
+      console.error("Failed to load order data:", error);
     }
   }
   useEffect(()=>{
